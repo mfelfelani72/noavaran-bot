@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: docker-c1
+    image: docker-i1
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    ports:
+    - 1234:1234
+
+  bot:
+    container_name: docker-b1
+    image: docker-b1
+    build:
+      context: .
+      dockerfile: Dockerfile-bot
+    # ports:
+    # - 80:80

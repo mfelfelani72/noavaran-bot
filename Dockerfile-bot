@@ -1,0 +1,7 @@
+#Stage 1
+FROM node:18-alpine as builder
+WORKDIR /app
+RUN npm install telegraf
+COPY . . 
+WORKDIR /app/Bot
+CMD [ "node" , "bot.js" ]
