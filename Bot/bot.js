@@ -4,8 +4,8 @@ const { Telegraf } = require("telegraf");
 const TOKEN = configures.tokenBot;
 const bot = new Telegraf(TOKEN);
 
-const web_link_aimoonhub = "https://aimoonhub.imoonex.ir/dashboard/home";
-const web_link_imoonex = "http://79.175.177.113:24300/landing";
+const web_link_aimoonhub = "https://aimoonhub.imoonex.ir";
+const web_link_aimoonhub_dashboard = "https://aimoonhub.imoonex.ir/dashboard/home";
 
 bot.start((ctx) =>
   ctx.reply("welcom to the Noavran bot", {
@@ -13,12 +13,13 @@ bot.start((ctx) =>
       keyboard: [
         [
           { text: "Aimoonhub", web_app: { url: web_link_aimoonhub } },
-          { text: "imoonex", web_app: { url: web_link_imoonex } },
+          { text: "Dashboard", web_app: { url: web_link_aimoonhub_dashboard } },
         ],
-        // [
-        //   { text: "about me", web_app: { url: "https://mfcloner.am/" } },
-        //   { text: "our restaurant", web_app: { url: "https://mfcloner.am/restaurant/" } },
-        // ],
+        [
+          { text: "Coins", web_app: { url: "https://aimoonhub.imoonex.ir/dashboard/coin-list" } },
+          { text: "Authors", web_app: { url: "https://aimoonhub.imoonex.ir/dashboard/author-list" } },
+          { text: "Providers", web_app: { url: "https://aimoonhub.imoonex.ir/dashboard/provider-list" } },
+        ],
       ],
     },
   })
